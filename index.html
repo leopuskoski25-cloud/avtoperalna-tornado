@@ -4,104 +4,509 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AVTOPERALNA TORNADO</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#0b0d10;color:#fff;line-height:1.6}
-header{position:fixed;top:0;width:100%;z-index:10;background:rgba(8,10,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid #252a31}
-nav{max-width:1100px;margin:auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:23px;font-weight:900;letter-spacing:2px}.logo span{color:#00b7ff}
-nav a{color:#ddd;text-decoration:none;margin-left:22px;font-size:14px}
-nav a:hover{color:#00b7ff}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 60px;background:radial-gradient(circle at center,#123247 0,#0b0d10 55%)}
-.hero h1{font-size:clamp(42px,8vw,82px);line-height:1;font-weight:900;text-transform:uppercase}
-.hero h1 span{color:#00b7ff}.hero p{max-width:650px;margin:25px auto;color:#b9c0c8;font-size:18px}
-.btn{display:inline-block;background:#00b7ff;color:#00131c;padding:14px 25px;border-radius:8px;text-decoration:none;font-weight:800;margin:6px}
-.btn.dark{background:#1b2026;color:#fff;border:1px solid #343b44}
-section{max-width:1100px;margin:auto;padding:80px 22px}
-.title{text-align:center;margin-bottom:42px}.title h2{font-size:38px}.title p{color:#9da5ae}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#12161b;border:1px solid #272d34;border-radius:16px;padding:28px}
-.card .icon{font-size:35px;margin-bottom:12px}.card h3{margin-bottom:8px}.card p{color:#aeb5bd}.price{margin-top:18px;font-size:25px;font-weight:900;color:#00b7ff}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.photo{height:300px;overflow:hidden;border-radius:15px;background:linear-gradient(135deg,#17232c,#071018);border:1px solid #29343e;display:flex;align-items:center;justify-content:center;color:#81909b;font-weight:bold}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.gallery a{cursor:pointer;display:block}.gallery img{width:100%;height:300px;object-fit:cover;border-radius:15px;border:1px solid #29343e;display:block}.contact{background:#10151a;border:1px solid #272d34;border-radius:18px;padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.contact p{color:#b5bdc5;margin:10px 0}.contact strong{color:#fff}
-footer{text-align:center;padding:30px;color:#737d87;border-top:1px solid #242a31}
-@media(max-width:750px){nav a{display:none}.cards,.gallery,.contact{grid-template-columns:1fr}.photo{height:180px}}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#0b0d10;
+color:#fff;
+line-height:1.6
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:10;
+background:rgba(8,10,13,.92);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #252a31
+}
+
+nav{
+max-width:1100px;
+margin:auto;
+padding:18px 22px;
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+
+.logo{
+font-size:23px;
+font-weight:900;
+letter-spacing:2px;
+text-shadow:0 0 18px rgba(0,183,255,.25)
+}
+
+.logo span{
+color:#00b7ff
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+margin-left:22px;
+font-size:14px
+}
+
+nav a:hover{
+color:#00b7ff
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px 60px;
+background:
+radial-gradient(circle at center,#123247 0,#0b0d10 55%)
+}
+
+.hero-box{
+position:relative;
+padding:45px 30px;
+max-width:950px
+}
+
+.hero-box:before{
+content:"";
+position:absolute;
+inset:0;
+border-radius:35px;
+border:1px solid rgba(0,183,255,.15);
+box-shadow:
+0 0 50px rgba(0,183,255,.08),
+inset 0 0 40px rgba(0,183,255,.04);
+pointer-events:none
+}
+
+.tornado-mark{
+font-size:58px;
+margin-bottom:8px;
+filter:drop-shadow(0 0 15px rgba(0,183,255,.6));
+animation:spin 8s linear infinite
+}
+
+@keyframes spin{
+from{transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+}
+
+.hero .premium{
+color:#00b7ff;
+font-weight:800;
+letter-spacing:4px;
+font-size:13px;
+margin-bottom:15px
+}
+
+.hero h1{
+font-size:clamp(42px,8vw,82px);
+line-height:1;
+font-weight:900;
+text-transform:uppercase;
+text-shadow:0 0 30px rgba(0,0,0,.5)
+}
+
+.hero h1 span{
+color:#00b7ff;
+text-shadow:0 0 25px rgba(0,183,255,.35)
+}
+
+.hero-subtitle{
+margin:18px auto 25px;
+font-size:17px;
+font-weight:700;
+letter-spacing:2px;
+color:#e7f8ff
+}
+
+.hero p.description{
+max-width:650px;
+margin:0 auto 25px;
+color:#b9c0c8;
+font-size:18px
+}
+
+.btn{
+display:inline-block;
+background:#00b7ff;
+color:#00131c;
+padding:14px 25px;
+border-radius:8px;
+text-decoration:none;
+font-weight:800;
+margin:6px;
+box-shadow:0 0 20px rgba(0,183,255,.15);
+transition:.2s
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 0 30px rgba(0,183,255,.35)
+}
+
+.btn.dark{
+background:#1b2026;
+color:#fff;
+border:1px solid #343b44
+}
+
+section{
+max-width:1100px;
+margin:auto;
+padding:80px 22px
+}
+
+.title{
+text-align:center;
+margin-bottom:42px
+}
+
+.title h2{
+font-size:38px
+}
+
+.title p{
+color:#9da5ae
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
+}
+
+.card{
+background:#12161b;
+border:1px solid #272d34;
+border-radius:16px;
+padding:28px
+}
+
+.card .icon{
+font-size:35px;
+margin-bottom:12px
+}
+
+.card h3{
+margin-bottom:8px
+}
+
+.card p{
+color:#aeb5bd
+}
+
+.price{
+margin-top:18px;
+font-size:25px;
+font-weight:900;
+color:#00b7ff
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px
+}
+
+.gallery a{
+cursor:pointer;
+display:block
+}
+
+.gallery img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:15px;
+border:1px solid #29343e;
+display:block;
+transition:.25s
+}
+
+.gallery img:hover{
+transform:scale(1.02);
+box-shadow:0 0 25px rgba(0,183,255,.15)
+}
+
+.contact{
+background:#10151a;
+border:1px solid #272d34;
+border-radius:18px;
+padding:35px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px
+}
+
+.contact p{
+color:#b5bdc5;
+margin:10px 0
+}
+
+.contact strong{
+color:#fff
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#737d87;
+border-top:1px solid #242a31
+}
+
+@media(max-width:750px){
+
+nav a{
+display:none
+}
+
+.cards,
+.gallery,
+.contact{
+grid-template-columns:1fr
+}
+
+.hero-box{
+padding:35px 15px
+}
+
+.tornado-mark{
+font-size:45px
+}
+
+.hero-subtitle{
+font-size:13px;
+letter-spacing:1.5px
+}
+
+}
 </style>
 </head>
+
 <body>
+
 <header>
 <nav>
 <div class="logo">AVTOPERALNA <span>TORNADO</span></div>
+
 <div>
-<a href="#uslugi">Услуги</a><a href="#galerija">Галерија</a><a href="#kontakt">Контакт</a>
+<a href="#uslugi">Услуги</a>
+<a href="#galerija">Галерија</a>
+<a href="#kontakt">Контакт</a>
 </div>
 </nav>
 </header>
 
 <main>
+
 <section class="hero">
-<div>
-<p style="color:#00b7ff;font-weight:800;letter-spacing:3px">PREMIUM CAR WASH</p>
-<h1>Твоето возило<br><span>заслужува повеќе.</span></h1>
-<p>Професионално миење, чистење и нега на автомобили. Брзо, темелно и со внимание на секој детал.</p>
-<a class="btn" href="tel:+38976484867">КОНТАКТИРАЈ НЕ</a>
-<a class="btn dark" href="#uslugi">ВИДИ УСЛУГИ</a>
+
+<div class="hero-box">
+
+<div class="tornado-mark">🌪️</div>
+
+<div class="premium">
+PREMIUM CAR WASH
 </div>
+
+<h1>
+Твоето возило<br>
+<span>заслужува повеќе.</span>
+</h1>
+
+<div class="hero-subtitle">
+ПРОФЕСИОНАЛНО ЧИСТЕЊЕ • НЕГА • СЈАЈ
+</div>
+
+<p class="description">
+Професионално миење, чистење и нега на автомобили.
+Брзо, темелно и со внимание на секој детал.
+</p>
+
+<a class="btn" href="tel:+38976484867">
+КОНТАКТИРАЈ НЕ
+</a>
+
+<a class="btn dark" href="#uslugi">
+ВИДИ УСЛУГИ
+</a>
+
+</div>
+
 </section>
+
 
 <section id="uslugi">
-<div class="title"><h2>Наши услуги</h2><p>Избери пакет според потребите на твојот автомобил.</p></div>
-<div class="cards">
-<div class="card"><div class="icon">💦</div><h3>Комплетно миење</h3><p>Надворешно миење, сушење и детално чистење.</p><div class="price">500 ден.</div></div>
-<div class="card"><div class="icon">💡</div><h3>Полирање фарови</h3><p>Обработка на заматени фарови и завршна заштита.</p><div class="price">1500 ден.</div></div>
-<div class="card"><div class="icon">✨</div><h3>Хемиско чистење</h3><p>Темелно хемиско чистење на ентериерот и тешко достапните места.</p><div class="price">4000 ден.</div></div>
+
+<div class="title">
+<h2>Наши услуги</h2>
+<p>Избери пакет според потребите на твојот автомобил.</p>
 </div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">💦</div>
+<h3>Комплетно миење</h3>
+<p>Надворешно миење, сушење и детално чистење.</p>
+<div class="price">500 ден.</div>
+</div>
+
+<div class="card">
+<div class="icon">💡</div>
+<h3>Полирање фарови</h3>
+<p>Обработка на заматени фарови и завршна заштита.</p>
+<div class="price">1500 ден.</div>
+</div>
+
+<div class="card">
+<div class="icon">✨</div>
+<h3>Хемиско чистење</h3>
+<p>Темелно хемиско чистење на ентериерот и тешко достапните места.</p>
+<div class="price">4000 ден.</div>
+</div>
+
+</div>
+
 </section>
+
 
 <section id="sonax">
-<div class="title"><h2>Професионална нега со SONAX</h2><p>За нега и одржување на возилата користиме професионални SONAX производи.</p></div>
-<div class="card" style="text-align:center;max-width:800px;margin:auto">
-<div class="icon">✨</div>
-<h3>Квалитет на секој детал</h3>
-<p>Избрани SONAX производи за чистење, нега и заштита на автомобилот — со внимание на секој дел од возилото.</p>
+
+<div class="title">
+<h2>Професионална нега со SONAX</h2>
+<p>
+За нега и одржување на возилата користиме професионални SONAX производи.
+</p>
 </div>
+
+<div class="card" style="text-align:center;max-width:800px;margin:auto">
+
+<div class="icon">✨</div>
+
+<h3>Квалитет на секој детал</h3>
+
+<p>
+Избрани SONAX производи за чистење, нега и заштита на автомобилот —
+со внимание на секој дел од возилото.
+</p>
+
+</div>
+
 </section>
-
-
 
 
 <section id="galerija">
-<div class="title"><h2>Галерија</h2><p>Погледни дел од нашата работа.</p></div>
-<div class="gallery">
-<a href="1000013726.jpg" target="_blank" rel="noopener"><img src="1000013726.jpg" alt="Автоперална Торнадо"></a>
-<a href="1000013727.jpg" target="_blank" rel="noopener"><img src="1000013727.jpg" alt="Автоперална Торнадо"></a>
-<a href="1000013729.jpg" target="_blank" rel="noopener"><img src="1000013729.jpg" alt="Автоперална Торнадо"></a>
-<a href="1000013731.jpg" target="_blank" rel="noopener"><img src="1000013731.jpg" alt="Автоперална Торнадо"></a>
-<a href="1000013732.jpg" target="_blank" rel="noopener"><img src="1000013732.jpg" alt="Автоперална Торнадо"></a>
-<a href="1000013733.jpg" target="_blank" rel="noopener"><img src="1000013733.jpg" alt="Автоперална Торнадо"></a>
+
+<div class="title">
+<h2>Галерија</h2>
+<p>Погледни дел од нашата работа.</p>
 </div>
+
+<div class="gallery">
+
+<a href="1000013726.jpg" target="_blank" rel="noopener">
+<img src="1000013726.jpg" alt="Автоперална Торнадо">
+</a>
+
+<a href="1000013727.jpg" target="_blank" rel="noopener">
+<img src="1000013727.jpg" alt="Автоперална Торнадо">
+</a>
+
+<a href="1000013729.jpg" target="_blank" rel="noopener">
+<img src="1000013729.jpg" alt="Автоперална Торнадо">
+</a>
+
+<a href="1000013731.jpg" target="_blank" rel="noopener">
+<img src="1000013731.jpg" alt="Автоперална Торнадо">
+</a>
+
+<a href="1000013732.jpg" target="_blank" rel="noopener">
+<img src="1000013732.jpg" alt="Автоперална Торнадо">
+</a>
+
+<a href="1000013733.jpg" target="_blank" rel="noopener">
+<img src="1000013733.jpg" alt="Автоперална Торнадо">
+</a>
+
+</div>
+
 </section>
+
 
 <section id="kontakt">
-<div class="title"><h2>Закажи термин</h2><p>Контактирај нè за слободен термин и цена.</p></div>
+
+<div class="title">
+<h2>Закажи термин</h2>
+<p>Контактирај нè за слободен термин и цена.</p>
+</div>
+
 <div class="contact">
+
 <div>
+
 <h3>📞 Контакт</h3>
-<p><strong>Телефон:</strong> <a href="tel:+38976484867" style="color:#00b7ff;text-decoration:none">076 484 867</a></p>
-<p><strong>Instagram:</strong> <a href="https://www.instagram.com/tornado.avtoperalna/" target="_blank" rel="noopener" style="color:#00b7ff;text-decoration:none">@tornado.avtoperalna</a></p>
-<p><strong>Работно време:</strong> Пон–Нед 09:00–19:00</p>
+
+<p>
+<strong>Телефон:</strong>
+<a href="tel:+38976484867"
+style="color:#00b7ff;text-decoration:none">
+076 484 867
+</a>
+</p>
+
+<p>
+<strong>Instagram:</strong>
+<a href="https://www.instagram.com/tornado.avtoperalna/"
+target="_blank"
+rel="noopener"
+style="color:#00b7ff;text-decoration:none">
+@tornado.avtoperalna
+</a>
+</p>
+
+<p>
+<strong>Работно време:</strong>
+Пон–Нед 09:00–19:00
+</p>
+
 </div>
+
+
 <div>
+
 <h3>📍 Локација</h3>
-<p><strong>Адреса:</strong> Ацо Шопов 20, Скопје</p>
-<a class="btn" href="https://www.google.com/maps/search/?api=1&query=%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B0+%D0%A2%D0%BE%D1%80%D0%BD%D0%B0%D0%B4%D0%BE%2C+%D0%90%D1%86%D0%BE+%D0%A8%D0%BE%D0%BF%D0%BE%D0%B2+20%2C+%D0%A1%D0%BA%D0%BE%D0%BF%D1%98%D0%B5" target="_blank" rel="noopener">ОТВОРИ МАПА</a>
+
+<p>
+<strong>Адреса:</strong>
+Ацо Шопов 20, Скопје
+</p>
+
+<a class="btn"
+href="https://www.google.com/maps/search/?api=1&query=%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B0+%D0%A2%D0%BE%D1%80%D0%BD%D0%B0%D0%B4%D0%BE%2C+%D0%90%D1%86%D0%BE+%D0%A8%D0%BE%D0%BF%D0%BE%D0%B2+20%2C+%D0%A1%D0%BA%D0%BE%D0%BF%D1%98%D0%B5"
+target="_blank"
+rel="noopener">
+ОТВОРИ МАПА
+</a>
+
 </div>
+
 </div>
+
 </section>
+
 </main>
 
-<footer>© 2026 AVTOPERALNA TORNADO · Professional Car Care</footer>
+<footer>
+© 2026 AVTOPERALNA TORNADO · Professional Car Care
+</footer>
+
 </body>
 </html>
