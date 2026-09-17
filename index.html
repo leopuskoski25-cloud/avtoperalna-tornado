@@ -6,34 +6,58 @@
 <title>AVTOPERALNA TORNADO</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#0b0d10;color:#fff;line-height:1.6}
-header{position:fixed;top:0;width:100%;z-index:10;background:rgba(8,10,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid #252a31}
-nav{max-width:1100px;margin:auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:23px;font-weight:900;letter-spacing:2px}.logo span{color:#00b7ff}
-nav a{color:#ddd;text-decoration:none;margin-left:22px;font-size:14px}
-nav a:hover{color:#00b7ff}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 60px;background:radial-gradient(circle at center,#123247 0,#0b0d10 55%)}
-.hero h1{font-size:clamp(42px,8vw,82px);line-height:1;font-weight:900;text-transform:uppercase}
-.hero h1 span{color:#00b7ff}.hero p{max-width:650px;margin:25px auto;color:#b9c0c8;font-size:18px}
-.btn{display:inline-block;background:#00b7ff;color:#00131c;padding:14px 25px;border-radius:8px;text-decoration:none;font-weight:800;margin:6px}
-.btn.dark{background:#1b2026;color:#fff;border:1px solid #343b44}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#080b0f;color:#fff;line-height:1.6}
+header{position:fixed;top:0;width:100%;z-index:10;background:rgba(7,10,14,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav{max-width:1100px;margin:auto;padding:10px 22px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:900;letter-spacing:1.5px}
+.logo img{width:62px;height:62px;object-fit:contain}
+.logo span{color:#18bfff}
+nav a{color:#ddd;text-decoration:none;margin-left:22px;font-size:14px;font-weight:700;transition:.2s}
+nav a:hover{color:#18bfff}
+
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:125px 20px 70px;position:relative;overflow:hidden;background:
+radial-gradient(circle at 50% 40%,rgba(18,65,91,.72),transparent 42%),
+linear-gradient(180deg,#0a1117 0%,#080b0f 100%)}
+.hero:before{content:"";position:absolute;width:720px;height:720px;border-radius:50%;border:1px solid rgba(24,191,255,.08);box-shadow:0 0 100px rgba(24,191,255,.06);top:50%;left:50%;transform:translate(-50%,-50%)}
+.hero-content{position:relative;z-index:1;max-width:900px}
+.hero-logo{width:min(270px,58vw);max-height:230px;object-fit:contain;margin:0 auto 8px;filter:drop-shadow(0 12px 25px rgba(0,0,0,.45))}
+.kicker{color:#18bfff;font-weight:900;letter-spacing:4px;font-size:12px;margin-bottom:16px}
+.hero h1{font-size:clamp(40px,7vw,76px);line-height:1.02;font-weight:900;text-transform:uppercase}
+.hero h1 span{color:#18bfff}
+.hero-sub{margin:19px auto 12px;font-size:15px;font-weight:800;letter-spacing:2px;color:#e8f8ff}
+.hero p{max-width:650px;margin:0 auto 25px;color:#b8c1ca;font-size:17px}
+.btn{display:inline-block;background:#18bfff;color:#00131c;padding:14px 25px;border-radius:8px;text-decoration:none;font-weight:900;margin:6px;box-shadow:0 8px 25px rgba(24,191,255,.14);transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(24,191,255,.25)}
+.btn.dark{background:#171d24;color:#fff;border:1px solid #303943;box-shadow:none}
+
 section{max-width:1100px;margin:auto;padding:80px 22px}
 .title{text-align:center;margin-bottom:42px}.title h2{font-size:38px}.title p{color:#9da5ae}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#12161b;border:1px solid #272d34;border-radius:16px;padding:28px}
-.card .icon{font-size:35px;margin-bottom:12px}.card h3{margin-bottom:8px}.card p{color:#aeb5bd}.price{margin-top:18px;font-size:25px;font-weight:900;color:#00b7ff}
+.card{background:#11161c;border:1px solid #272f38;border-radius:16px;padding:28px}
+.card .icon{font-size:35px;margin-bottom:12px}.card h3{margin-bottom:8px}.card p{color:#aeb5bd}
+.price{margin-top:18px;font-size:25px;font-weight:900;color:#18bfff}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.photo{height:300px;overflow:hidden;border-radius:15px;background:linear-gradient(135deg,#17232c,#071018);border:1px solid #29343e;display:flex;align-items:center;justify-content:center;color:#81909b;font-weight:bold}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.gallery a{cursor:pointer;display:block}.gallery img{width:100%;height:300px;object-fit:cover;border-radius:15px;border:1px solid #29343e;display:block}.contact{background:#10151a;border:1px solid #272d34;border-radius:18px;padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.gallery a{cursor:pointer;display:block}.gallery img{width:100%;height:300px;object-fit:cover;border-radius:15px;border:1px solid #29343e;display:block;transition:.25s}
+.gallery img:hover{transform:scale(1.02);box-shadow:0 0 25px rgba(24,191,255,.15)}
+.contact{background:#10151a;border:1px solid #272d34;border-radius:18px;padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
 .contact p{color:#b5bdc5;margin:10px 0}.contact strong{color:#fff}
 footer{text-align:center;padding:30px;color:#737d87;border-top:1px solid #242a31}
-@media(max-width:750px){nav a{display:none}.cards,.gallery,.contact{grid-template-columns:1fr}.photo{height:180px}}
+
+@media(max-width:750px){
+nav a{display:none}.cards,.gallery,.contact{grid-template-columns:1fr}
+.logo img{width:52px;height:52px}.logo{font-size:16px}
+.hero{padding-top:110px}.hero-logo{width:210px;max-height:190px}
+}
 </style>
 </head>
 <body>
 <header>
 <nav>
-<div class="logo">AVTOPERALNA <span>TORNADO</span></div>
+<div class="logo">
+<img src="tornado-logo.png" alt="Автоперална Торнадо">
+<div>AVTOPERALNA <span>TORNADO</span></div>
+</div>
 <div>
 <a href="#uslugi">Услуги</a><a href="#galerija">Галерија</a><a href="#kontakt">Контакт</a>
 </div>
@@ -42,9 +66,11 @@ footer{text-align:center;padding:30px;color:#737d87;border-top:1px solid #242a31
 
 <main>
 <section class="hero">
-<div>
-<p style="color:#00b7ff;font-weight:800;letter-spacing:3px">PREMIUM CAR WASH</p>
+<div class="hero-content">
+<img class="hero-logo" src="tornado-logo.png" alt="Автоперална Торнадо">
+<div class="kicker">PREMIUM CAR WASH</div>
 <h1>Твоето возило<br><span>заслужува повеќе.</span></h1>
+<div class="hero-sub">ПРОФЕСИОНАЛНО ЧИСТЕЊЕ • НЕГА • СЈАЈ</div>
 <p>Професионално миење, чистење и нега на автомобили. Брзо, темелно и со внимание на секој детал.</p>
 <a class="btn" href="tel:+38976484867">КОНТАКТИРАЈ НЕ</a>
 <a class="btn dark" href="#uslugi">ВИДИ УСЛУГИ</a>
@@ -63,14 +89,10 @@ footer{text-align:center;padding:30px;color:#737d87;border-top:1px solid #242a31
 <section id="sonax">
 <div class="title"><h2>Професионална нега со SONAX</h2><p>За нега и одржување на возилата користиме професионални SONAX производи.</p></div>
 <div class="card" style="text-align:center;max-width:800px;margin:auto">
-<div class="icon">✨</div>
-<h3>Квалитет на секој детал</h3>
+<div class="icon">✨</div><h3>Квалитет на секој детал</h3>
 <p>Избрани SONAX производи за чистење, нега и заштита на автомобилот — со внимание на секој дел од возилото.</p>
 </div>
 </section>
-
-
-
 
 <section id="galerija">
 <div class="title"><h2>Галерија</h2><p>Погледни дел од нашата работа.</p></div>
@@ -87,21 +109,17 @@ footer{text-align:center;padding:30px;color:#737d87;border-top:1px solid #242a31
 <section id="kontakt">
 <div class="title"><h2>Закажи термин</h2><p>Контактирај нè за слободен термин и цена.</p></div>
 <div class="contact">
-<div>
-<h3>📞 Контакт</h3>
-<p><strong>Телефон:</strong> <a href="tel:+38976484867" style="color:#00b7ff;text-decoration:none">076 484 867</a></p>
-<p><strong>Instagram:</strong> <a href="https://www.instagram.com/tornado.avtoperalna/" target="_blank" rel="noopener" style="color:#00b7ff;text-decoration:none">@tornado.avtoperalna</a></p>
-<p><strong>Работно време:</strong> Пон–Нед 09:00–19:00</p>
-</div>
-<div>
-<h3>📍 Локација</h3>
+<div><h3>📞 Контакт</h3>
+<p><strong>Телефон:</strong> <a href="tel:+38976484867" style="color:#18bfff;text-decoration:none">076 484 867</a></p>
+<p><strong>Instagram:</strong> <a href="https://www.instagram.com/tornado.avtoperalna/" target="_blank" rel="noopener" style="color:#18bfff;text-decoration:none">@tornado.avtoperalna</a></p>
+<p><strong>Работно време:</strong> Пон–Нед 09:00–19:00</p></div>
+<div><h3>📍 Локација</h3>
 <p><strong>Адреса:</strong> Ацо Шопов 20, Скопје</p>
 <a class="btn" href="https://www.google.com/maps/search/?api=1&query=%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B0+%D0%A2%D0%BE%D1%80%D0%BD%D0%B0%D0%B4%D0%BE%2C+%D0%90%D1%86%D0%BE+%D0%A8%D0%BE%D0%BF%D0%BE%D0%B2+20%2C+%D0%A1%D0%BA%D0%BE%D0%BF%D1%98%D0%B5" target="_blank" rel="noopener">ОТВОРИ МАПА</a>
 </div>
 </div>
 </section>
 </main>
-
 <footer>© 2026 AVTOPERALNA TORNADO · Professional Car Care</footer>
 </body>
 </html>
